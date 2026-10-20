@@ -149,7 +149,7 @@
 
   Promise.race([Promise.all([fontsP, heroP, filmP, firstFrames, minTime]), maxTime]).then(() => {
     W.fonts = W.hero = W.film = W.frames = 1; setP();
-    ltxt.textContent = 'Sinal captado';
+    ltxt.textContent = 'Estou aí firme';
     setTimeout(start, reduce ? 50 : 420);
   });
 
@@ -274,7 +274,7 @@
       trackEl.style.height = bh.toFixed(1) + 'px';
       trackEl.style.transform = `translate3d(${bx.toFixed(1)}px, ${by.toFixed(1)}px, 0)`;
       trackEl.style.opacity = '1';
-      const label = sec >= 12.4 ? 'Fera mansa' : sec >= 9.9 ? 'Contato visual' : `Espécime 01  ${94 + (i % 5)}%`;
+      const label = sec >= 12.4 ? 'É perigoso' : sec >= 9.9 ? 'Esturrar' : `Onça  ${94 + (i % 5)}%`;
       if (trackLabel.textContent !== label) trackLabel.textContent = label;
     }
   }
@@ -334,7 +334,7 @@
   };
   psiuBtn.addEventListener('click', () => {
     psiu.classList.add('is-open');
-    speak('Cê é o bixão mesmo, hein, doido!', { pitch: 0.55, rate: 0.92 });
+    speak('Mata. Aqui tem coragem!', { pitch: 0.45, rate: 0.85 });
     clearTimeout(psiuTimer); psiuTimer = setTimeout(hidePsiu, 5200);
   });
   ScrollTrigger.create({ trigger: '#ficha', start: 'top 35%', once: true, onEnter: () => setTimeout(showPsiu, 700) });
@@ -424,9 +424,10 @@
   if (!reduce) {
     const st = { trigger: '.onca', start: 'top bottom', end: 'bottom top', scrub: true };
     gsap.fromTo('.onca__bg', { yPercent: -7, scale: 1.1 }, { yPercent: 7, scale: 1, ease: 'none', scrollTrigger: st });
-    gsap.fromTo('.onca__l--1', { xPercent: -14 }, { xPercent: 4, ease: 'none', scrollTrigger: st });
-    gsap.fromTo('.onca__l--2', { xPercent: 14 }, { xPercent: -4, ease: 'none', scrollTrigger: st });
-    gsap.fromTo('.onca__l--3', { xPercent: -9 }, { xPercent: 7, ease: 'none', scrollTrigger: st });
+    gsap.fromTo('.onca__l--1', { xPercent: -10 }, { xPercent: 6, ease: 'none', scrollTrigger: st });
+    gsap.fromTo('.onca__l--2', { xPercent: 10 }, { xPercent: -6, ease: 'none', scrollTrigger: st });
+    gsap.fromTo('.onca__l--3', { xPercent: -8 }, { xPercent: 8, ease: 'none', scrollTrigger: st });
+    gsap.fromTo('.onca__l--4', { xPercent: 8 }, { xPercent: -6, ease: 'none', scrollTrigger: st });
   }
 
   /* ---------- armadilhas (carrossel) ---------- */
